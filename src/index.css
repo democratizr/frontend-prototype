@@ -4,6 +4,8 @@ html, body {
   font-family: Lato, AvenirNext, "Avenir Next", AvenirNextLT, "Avenir Next LT", sans-serif;
   font-size: 16px;
   font-weight: 300;
+  /* Maybe this should be in colors config? but it's not used anywhere else anyway */
+  background-color: #fafafa;
 }
 
 bold, strong {
