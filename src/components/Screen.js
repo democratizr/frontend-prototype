@@ -8,3 +8,5 @@ const Screen = props => {
     <main className={["screen", className]} {...rest}>{children}</main>
   );
 };
+
+export default Screen;

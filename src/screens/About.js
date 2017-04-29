@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Screen from './Screen';
+import Screen from '../components/Screen';
 
 
 const About = () => {
