@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Screen from '../components/Screen';
+import Link from '../components/Link';
 
 
 const Home = () => {
