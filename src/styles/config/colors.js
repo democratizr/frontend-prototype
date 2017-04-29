@@ -27,6 +27,10 @@ const colors = {
   navigationInverted: {
     color: base.white,
     backgroundColor: base.blue
+  },
+
+  headerIcon: {
+    fill: base.white
   }
 };
 
