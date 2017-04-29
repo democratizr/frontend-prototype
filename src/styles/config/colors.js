@@ -1,5 +1,6 @@
 const base = {
   black: '#000',
+  black25: 'rgba(0, 0, 0, 0.25)',
   white: '#fff',
   grey: {
     darkest: '#454545',
@@ -28,6 +29,17 @@ const colors = {
     color: base.white,
     backgroundColor: base.blue
   },
+
+  icon: {
+    fill: base.grey.darkest
+  },
+
+  field: {
+    color: base.grey.darkest,
+    backgroundColor: base.white
+  },
+
+  headerFieldShadow: base.black25,
 
   headerIcon: {
     fill: base.white

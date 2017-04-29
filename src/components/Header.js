@@ -4,43 +4,84 @@ import React from 'react';
 import Icon from './Icon';
 import { medium } from '../styles/config/breakpoints';
 import colors from '../styles/config/colors';
-import { px, rem } from '../styles/sizes';
+import typography from '../styles/config/typography';
+import { percent, px, rem } from '../styles/sizes';
 
 
-const style = {
+const styles = {
   Header: {
     display: 'flex',
     alignItems: 'center',
     padding: rem(1),
     ...colors.brandInverted
   },
-  Title: {
-    flex: 1,
-    margin: 0,
-    fontSize: rem(1),
-    fontWeight: 'normal',
-    lineHeight: 1,
-
-    [medium]: {
-      fontSize: rem(1.5)
-    }
+  Logo: {
+    marginRight: rem(1)
+  },
+  MyLocation: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: rem(1/2),
+    borderRadius: px(4),
+    boxShadow: `${px(0, 1, 1)} ${colors.headerFieldShadow}`,
+    ...typography.bold,
+    ...colors.field,
+    cursor: 'default'
+  },
+  MyLocationIcon: {
+    width: rem(1),
+    height: rem(1),
+    marginRight: rem(1/4)
   },
   MenuButton: {
+    width: rem(1),
+    height: rem(1),
+    marginLeft: 'auto',
+    cursor: 'pointer',
+
+    [medium]: {
+      width: rem(1.5),
+      height: rem(1.5)
+    }
+  },
+  MenuButtonIcon: {
     ...colors.headerIcon,
-    width: px(24),
-    height: px(24)
+    width: percent(100),
+    height: percent(100)
   }
 };
 
-const BaseHeader = () => {
+const Logo = () => {
   return (
-    <div style={style.Header}>
-      <h1 style={style.Title}>Welcome to React</h1>
-      <Icon name="hamburger" style={style.MenuButton} />
-    </div>
+    <div style={styles.Logo}>Democratizr</div>
   );
 };
 
-const Header = Radium(BaseHeader);
+const MyLocation = () => {
+  return (
+    <div style={styles.MyLocation}>
+      <Icon name="location" style={styles.MyLocationIcon} />
+      My Location
+    </div>
+  )
+};
+
+const MenuButton = Radium(() => {
+  return (
+    <div style={styles.MenuButton}>
+      <Icon name="hamburger" style={styles.MenuButtonIcon} />
+    </div>
+  );
+});
+
+const Header = () => {
+  return (
+    <div style={styles.Header}>
+      <Logo />
+      <MyLocation />
+      <MenuButton />
+    </div>
+  );
+};
 
 export default Header;

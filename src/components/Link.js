@@ -22,7 +22,7 @@ const styles = {
 
 const RouterLink = Radium(BaseRouterLink);
 
-const BaseLink = props => {
+const Link = Radium(props => {
   const {
     children,
     style,
@@ -32,8 +32,6 @@ const BaseLink = props => {
   return (
     <RouterLink style={[styles.Link, style]} {...rest}><span>{children}</span></RouterLink>
   );
-};
-
-const Link = Radium(BaseLink);
+});
 
 export default Link;
