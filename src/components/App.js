@@ -19,6 +19,7 @@ const App = () => {
     <Router>
       <div className="App">
         <Header />
+        {/* This throws an invariant error, claiming Home is an object */}
         <Route exact path="/" component={Home} />
         {/* This throws an invariant error, claiming About is an object */}
         <Route path="/about" component={About} />
