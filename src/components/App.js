@@ -1,3 +1,4 @@
+import { StyleRoot } from 'radium';
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -8,18 +9,18 @@ import Header from './Header';
 import About from '../screens/About';
 import Home from '../screens/Home';
 
-import './App.css';
-
 
 const App = () => {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-      </div>
-    </Router>
+    <StyleRoot>
+      <Router>
+        <div className="App">
+          <Header />
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+        </div>
+      </Router>
+    </StyleRoot>
   );
 };
 
