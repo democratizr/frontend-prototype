@@ -3,12 +3,13 @@ import React from 'react';
 import { Link as BaseRouterLink } from 'react-router-dom';
 
 import colors from '../styles/config/colors';
+import typography from '../styles/config/typography';
 
 
 const styles = {
   Link: {
     ...colors.navigation,
-    fontWeight: 'bold',
+    ...typography.bold,
     textDecoration: 'none',
 
     ':visited': colors.navigation,
