@@ -13,13 +13,14 @@ import './App.css';
 
 
 const App = () => {
-  console.log('About', typeof About);
-  console.log('Home', typeof Home);
+  console.log('About', typeof About); // This logs function
+  console.log('Home', typeof Home); // This logs function
   return (
     <Router>
       <div className="App">
         <Header />
         <Route exact path="/" component={Home} />
+        {/* This throws an invariant error, claiming About is an object */}
         <Route path="/about" component={About} />
       </div>
     </Router>
