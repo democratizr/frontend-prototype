@@ -5,7 +5,9 @@ import Screen from './Screen';
 
 const Home = () => {
   return (
-    <Screen>Home</Screen>
+    <div>
+      <Screen>Home</Screen>
+    </div>
   );
 };
 
