@@ -17,6 +17,7 @@ const styles = {
     ...colors.brandInverted
   },
   HeaderLink: {
+    ...typography.normal,
     ...colors.headerText,
 
     ':hover': {
