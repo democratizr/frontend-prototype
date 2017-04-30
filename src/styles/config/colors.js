@@ -49,6 +49,10 @@ const colors = {
     fill: base.white
   },
 
+  headerButtonIcon: {
+    fill: base.pink
+  },
+
   contentBox: {
     borderColor: base.grey.lighter,
     color: base.grey.darkest,
