@@ -41,8 +41,28 @@ const colors = {
 
   headerFieldShadow: base.black25,
 
+  headerText: {
+    color: base.white
+  },
+
   headerIcon: {
     fill: base.white
+  },
+
+  contentBox: {
+    borderColor: base.grey.lighter,
+    color: base.grey.darkest,
+    backgroundColor: base.white
+  },
+
+  contentScreen: {
+    color: base.grey.darkest,
+    backgroundColor: base.white
+  },
+
+  footer: {
+    color: base.grey.darkest,
+    backgroundColor: base.grey.lightest
   }
 };
 

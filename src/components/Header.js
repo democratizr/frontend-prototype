@@ -2,6 +2,7 @@ import Radium from 'radium';
 import React from 'react';
 
 import Icon from './Icon';
+import Link from './Link';
 import { medium } from '../styles/config/breakpoints';
 import colors from '../styles/config/colors';
 import typography from '../styles/config/typography';
@@ -14,6 +15,16 @@ const styles = {
     alignItems: 'center',
     padding: rem(1),
     ...colors.brandInverted
+  },
+  HeaderLink: {
+    ...colors.headerText,
+
+    ':hover': {
+      textDecoration: 'none'
+    },
+    ':visited': {
+      ...colors.headerText
+    }
   },
   Logo: {
     marginRight: rem(1)
@@ -34,9 +45,13 @@ const styles = {
     marginRight: rem(1/4)
   },
   MenuButton: {
+    boxSizing: 'border-box',
     width: rem(1),
     height: rem(1),
-    marginLeft: 'auto',
+    margin: '0 0 0 auto',
+    border: 0,
+    padding: 0,
+    background: 'transparent',
     cursor: 'pointer',
 
     [medium]: {
@@ -51,11 +66,13 @@ const styles = {
   }
 };
 
-const Logo = () => {
+const Logo = Radium(() => {
   return (
-    <div style={styles.Logo}>Democratizr</div>
+    <div style={styles.Logo}>
+      <Link to="/" style={styles.HeaderLink}>Democratizr</Link>
+    </div>
   );
-};
+});
 
 const MyLocation = () => {
   return (
@@ -68,19 +85,24 @@ const MyLocation = () => {
 
 const MenuButton = Radium(() => {
   return (
-    <div style={styles.MenuButton}>
+    <button style={styles.MenuButton}>
       <Icon name="hamburger" style={styles.MenuButtonIcon} />
-    </div>
+    </button>
   );
 });
 
-const Header = () => {
+const Header = props => {
+  const style = {
+    ...styles.Header,
+    ...props.style
+  };
+
   return (
-    <div style={styles.Header}>
+    <header style={style}>
       <Logo />
       <MyLocation />
       <MenuButton />
-    </div>
+    </header>
   );
 };
 

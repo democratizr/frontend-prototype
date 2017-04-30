@@ -21,4 +21,4 @@ const breakpoint = opts => {
   return `@media only ${only} and (${conditions})`;
 };
 
-export const medium = breakpoint({ minWidth: em(20) });
+export const medium = breakpoint({ minWidth: em(32) });
