@@ -1,6 +1,7 @@
 import Radium from 'radium';
 import React, { Component } from 'react';
 
+import Button from './Button';
 import Icon from './Icon';
 import Link from './Link';
 import TextInput from './TextInput';
@@ -122,7 +123,6 @@ const styles = {
     border: 0,
     padding: 0,
     background: 'transparent',
-    cursor: 'pointer',
 
     [medium]: {
       width: rem(1.5),
@@ -159,16 +159,16 @@ const MyLocation = props => {
     <div style={style} {...rest}>
       <Icon name="location" style={styles.LocationIcon} />
       My Location
-      <button onClick={onClear} style={styles.MyLocationClearButton}>x</button>
+      <Button onClick={onClear} style={styles.MyLocationClearButton}>x</Button>
     </div>
   )
 };
 
 const LocationSubmitButton = Radium(() => {
   return (
-    <button style={styles.LocationSubmitButton}>
+    <Button style={styles.LocationSubmitButton}>
       <Icon name="circleChevronKnockout" style={styles.LocationSubmitIcon} />
-    </button>
+    </Button>
   )
 });
 
@@ -229,9 +229,9 @@ class Location extends Component {
 
 const MenuButton = Radium(() => {
   return (
-    <button style={styles.MenuButton}>
+    <Button style={styles.MenuButton}>
       <Icon name="hamburger" style={styles.MenuButtonIcon} />
-    </button>
+    </Button>
   );
 });
 
