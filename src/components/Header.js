@@ -16,9 +16,13 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     boxSizing: 'border-box',
+    top: 0,
+    left: 0,
+    width: percent(100),
     height: rem(4),
     padding: rem(1),
     ...colors.brandInverted,
+    zIndex: 1,
 
     [medium]: {
       height: rem(4.5)
@@ -190,7 +194,7 @@ const LocationInput = Radium(() => {
   };
 
   return (
-    <TextInput style={style} />
+    <TextInput style={style} autoFocus={true} />
   );
 });
 
@@ -241,12 +245,21 @@ const Header = Radium(props => {
     ...props.style
   };
 
+  const fixedStyle = {
+    ...style,
+    position: 'fixed'
+  };
+
   return (
-    <header style={style}>
-      <Logo />
-      <Location />
-      <MenuButton />
-    </header>
+    <div>
+      <header style={fixedStyle}>
+        <Logo />
+        <Location />
+        <MenuButton />
+      </header>
+      {/* This just exists to offset the space of the fixed header */}
+      <div style={style} />
+    </div>
   );
 });
 
