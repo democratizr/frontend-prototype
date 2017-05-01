@@ -163,7 +163,7 @@ const MyLocation = props => {
     <div style={style} {...rest}>
       <Icon name="location" style={styles.LocationIcon} />
       My Location
-      <Button onClick={onClear} style={styles.MyLocationClearButton}>x</Button>
+      <Button onClick={onClear} style={styles.MyLocationClearButton}>⨉</Button>
     </div>
   )
 };
