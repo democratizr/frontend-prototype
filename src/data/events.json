@@ -158,6 +158,89 @@
     ]
   },
   {
+    "url": "/events/5/",
+    "name": "Get involved with local parties",
+    "description": "",
+    "tags": ["politics", "showing up", "local"],
+    "when": {
+    },
+    "where": {
+    },
+    "actions": [
+      {
+        "url": "/actions/11/",
+        "name": "43rd Democrats Monthly Meeting",
+        "description": "",
+        "link": "",
+        "organization": {"name": "43rd Democrats", "link": ""},
+        "tags": ["local"],
+        "when": {
+          "start": "2017-05-16T19:00:00",
+          "end": "2017-05-16T21:00:00"
+        },
+        "where": {
+          "address": {
+            "street": "University Heights Center, 5031 University Way NE",
+            "city": "Seattle",
+            "state": "WA",
+            "zip": "98105"
+          },
+          "lat": 0,
+          "lng": 0,
+        }
+      },
+      {
+        "url": "/actions/12/",
+        "name": "Monthly Democratic Socialist Meeting",
+        "description": "",
+        "link": "",
+        "organization": {"name": "Seattle DSA", "link": "https://seattledsa.org"},
+        "tags": ["local", "socialism"],
+        "when": {
+          "start": "2017-05-04T19:00:00",
+          "end": "2017-05-04T20:00:00"
+        },
+        "where": {
+          "address": {
+            "street": "Washington Hall 153 14th Ave",
+            "city": "Seattle",
+            "state": "WA",
+            "zip": "98122"
+          },
+          "lat": 0,
+          "lng": 0,
+        }
+      },
+      {
+        "url": "/actions/6/",
+        "name": "Call your representatives in support of worker rights",
+        "description": "Defend workers’ rights by calling on Congress to oppose HB 1180 “Working Families Flexibility Act of 2017” which would amend the Fair Labor Standards Act (FLSA) to allow private-sector employers to “compensate” hourly workers with compensatory time off in lieu of overtime pay.",
+        "link": "https://www.facebook.com/SeattleIndivisible/posts/288855624894494",
+        "organization": {"name": "Seattle Indivisible", "link": "https://www.seattleindivisible.com"},
+        "post_action_link": "https://goo.gl/forms/lbHUvI9h58f0dLqx1",
+        "sample_script": "My name is [name], calling from [city, zip]. I’m calling to ask Representative [Jayapal or Smith] to oppose HB 1180 which is clearly exploitative of workers.",
+        "representatives": [
+          {
+            "name": "Pramila Jayapal",
+            "phone": "202-225-3106",
+            "title": "Rep"
+          },
+          {
+            "name": "Patty Murray",
+            "phone": "202-224-2621",
+            "title": "Sen"
+          },
+          {
+            "name": "Maria Cantwell",
+            "phone": "202-224-3441",
+            "title": "Sen"
+          }
+        ],
+        "tags": ["phone call"],
+      }
+    ]
+  },
+  {
     "url": "/events/3/",
     "name": "Oppose Obamacare (ACA) Repeal",
     "organization": "Like everyone",
