@@ -1,5 +1,44 @@
 [
   {
+    "url": "/events/4/",
+    "name": "Help flip the State Senate!",
+    "organization": {},
+    "description": "The state senate is currently tied, resulting in a failure to properly fund education or reform Washington's horribly regressive sales tax. A special election is happening this year in the 45th District (Kirkland, Woodinville)",
+    "tags": ["local government", "education", "taxes"],
+    "when": {
+      "start": "2017-01-01T14:00:00",
+      "end": "2017-11-01T16:00:00"
+    },
+    "where": {
+      "bounds": {
+      }
+    },
+    "actions": [
+      {
+        "url": "/actions/9/",
+        "name": "Spring voter identification drive",
+        "description": "Help us identify voters and prepare for our special election this fall. With your help, Manka Dhingra (D) and other progressives can win up and down the ballot.",
+        "link": "https://www.45thdemocrats.org/2017-special-election/",
+        "organization": {"name": "The 45th Democrats", "link": "https://www.45thdemocrats.org/"},
+        "tags": ["canvasing"],
+        "where": {
+          "address": {
+            "street": "Central Washington University, 120 228th Ave NE",
+            "city": "Sammamish",
+            "state": "WA",
+            "zip": ""
+          },
+          "lat": 0,
+          "lng": 0,
+        },
+        "when": {
+          "start": "2017-05-07T14:14:00",
+          "end": "2017-11-01T16:16:00"
+        }
+      }
+    ]
+  },
+  {
     "url": "/events/1/",
     "name": "Support a Seattle High-earner Income Tax",
     "organization": {},
