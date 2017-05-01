@@ -66,13 +66,13 @@
         "tags": ["direct action"],
       },
       {
-        "url": "/actions/5/",
+        "url": "/actions/6/",
         "name": "Call your representatives in support of worker rights",
         "description": "Defend workers’ rights by calling on Congress to oppose HB 1180 “Working Families Flexibility Act of 2017” which would amend the Fair Labor Standards Act (FLSA) to allow private-sector employers to “compensate” hourly workers with compensatory time off in lieu of overtime pay.",
         "link": "https://www.facebook.com/SeattleIndivisible/posts/288855624894494",
         "organization": {"name": "Seattle Indivisible", "link": "https://www.seattleindivisible.com"},
         "post_action_link": "https://goo.gl/forms/lbHUvI9h58f0dLqx1",
-        "sample_script": "My name is [name] calling from [city,zip]. I want to let Representative [congressperson’s name] know that I will NOT support him/her in future elections if he/she votes to repeal the ACA. [insert personal story about ACA if able]",
+        "sample_script": "My name is [name], calling from [city, zip]. I’m calling to ask Representative [Jayapal or Smith] to oppose HB 1180 which is clearly exploitative of workers.",
         "representatives": [
           {
             "name": "Pramila Jayapal",
