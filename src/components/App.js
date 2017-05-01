@@ -1,4 +1,4 @@
-import { StyleRoot } from 'radium';
+import glamorous, { ThemeProvider } from 'glamorous';
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -10,44 +10,49 @@ import Header from './Header';
 import About from '../screens/About';
 import Home from '../screens/Home';
 import { percent, rem } from '../styles/sizes';
+import theme from '../styles/theme';
 
 
-const styles = {
-  StyleRoot: {
-    height: percent(100)
-  },
-  App: {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: percent(100)
-  },
-  Header: {
-    flexShrink: 0
-  },
-  Body: {
-    display: 'flex',
-    flexDirection: 'column',
-    flex: 1
-  },
-  Footer: {
-    marginTop: rem(1)
-  }
-};
+const AppOuter = glamorous.div({
+  height: percent(100)
+});
+
+const AppInner = glamorous.div({
+  display: 'flex',
+  flexDirection: 'column',
+  minHeight: percent(100)
+});
+
+const AppHeader = glamorous(Header)({
+  flexShrink: 0
+});
+
+const AppBody = glamorous.div({
+  display: 'flex',
+  flexDirection: 'column',
+  flex: 1
+});
+
+const AppFooter = glamorous(Footer)({
+  marginTop: rem(1)
+});
 
 const App = () => {
   return (
-    <StyleRoot style={styles.StyleRoot}>
-      <Router>
-        <div style={styles.App}>
-          <Header style={styles.Header} />
-          <div style={styles.Body}>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-          </div>
-          <Footer style={styles.Footer} />
-        </div>
-      </Router>
-    </StyleRoot>
+    <ThemeProvider theme={theme}>
+      <AppOuter>
+        <Router>
+          <AppInner>
+            <AppHeader />
+            <AppBody>
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+            </AppBody>
+            <AppFooter />
+          </AppInner>
+        </Router>
+      </AppOuter>
+    </ThemeProvider>
   );
 };
 

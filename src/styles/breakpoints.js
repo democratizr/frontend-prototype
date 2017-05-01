@@ -1,4 +1,4 @@
-import { em } from '../sizes';
+import { em } from './sizes';
 
 
 const breakpoint = opts => {

@@ -1,9 +1,7 @@
-import Radium from 'radium';
+import glamorous from 'glamorous';
 import React from 'react';
 
-import colors from '../styles/config/colors';
 import { percent, px } from '../styles/sizes';
-
 
 const icons = {
   hamburger: {
@@ -17,21 +15,39 @@ const icons = {
   }
 };
 
-const defaultViewBox = '0 0 24 24'
+const defaultViewBox = '0 0 24 24';
 
-const defaultStyles = {
-  ...colors.icon,
+const Svg = glamorous.svg((props, theme) => ({
+  ...theme.colors.icon,
   width: px(24),
   height: px(24),
   maxWidth: percent(100),
   maxHeight: percent(100)
+}));
+
+// The default of `glamorous.path` is to swallow the `d` attr. O_o
+const SvgPath = props => {
+  const {
+    iconTheme,
+    ...rest
+  } = props;
+
+  return (
+    <path {...rest} />
+  )
 };
 
-const Icon = Radium(props => {
+const Path = glamorous(SvgPath)((props, theme) => {
+  const { iconTheme } = props;
+
+  return theme.colors.iconTheme[iconTheme];
+});
+
+const Icon = props => {
   const {
     name,
-    style,
-    ...restProps
+    iconTheme = 'dark',
+    ...rest
   } = props;
 
   const {
@@ -39,19 +55,11 @@ const Icon = Radium(props => {
     viewBox = defaultViewBox
   } = icons[name];
 
-  const {
-    fill,
-    ...restStyle
-  } = {
-    ...defaultStyles,
-    ...style
-  };
-
   return (
-    <svg style={restStyle} viewBox={viewBox} {...restProps}>
-      <path d={d} style={{ fill }}></path>
-    </svg>
+    <Svg viewBox={viewBox} {...rest}>
+      <Path d={d} iconTheme={iconTheme} />
+    </Svg>
   );
-});
+};
 
 export default Icon;

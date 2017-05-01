@@ -1,31 +1,18 @@
-import Radium from 'radium';
-import React from 'react';
+import glamorous from 'glamorous';
 
-import { medium } from '../styles/config/breakpoints';
-import colors from '../styles/config/colors';
+import { medium } from '../styles/breakpoints';
 import { rem, px } from '../styles/sizes';
 
 
-const styles = {
-  ContentBox: {
-    padding: rem(1),
-    borderStyle: 'solid',
-    borderWidth: px(1, 0),
-    ...colors.contentBox,
+const ContentBox = glamorous.div((props, theme) => ({
+  padding: rem(1),
+  borderStyle: 'solid',
+  borderWidth: px(1, 0),
+  ...theme.colors.contentBox,
 
-    [medium]: {
-      borderWidth: px(1)
-    }
+  [medium]: {
+    borderWidth: px(1)
   }
-};
-
-const ContentBox = Radium(props => {
-  const {
-    children,
-    ...rest
-  } = props;
-
-  return <div style={styles.ContentBox} {...rest}>{children}</div>
-});
+}));
 
 export default ContentBox;
