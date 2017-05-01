@@ -1,0 +1,136 @@
+[
+  {
+    "url": "/events/1/",
+    "name": "Support a Seattle High-earner Income Tax",
+    "organization": {},
+    "description": "Washington State has the most regressive tax structure in the United States. The city council of Seattle is trying to change that with 'A RESOLUTION expressing The City of Seattle’s intent to adopt a progressive income tax targeting high-income households.'",
+    "tags": ["local government", "wealth inequality", "taxes"],
+    "when": {
+      "start": "2017-05-01T14:00:00",
+      "end": "2017-05-01T16:00:00"
+    },
+    "where": {
+      "address": {
+        "street": "600 Fourth Ave., Floor 2",
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "98124"
+      },
+      "lat": 0,
+      "lng": 0,
+    },
+    "actions": [
+      {
+        "url": "/actions/1/",
+        "name": "Show up in support of the resolution",
+        "description": "",
+        "tags": ["direct action"],
+      }
+    ]
+  },
+  {
+    "url": "/events/2/",
+    "name": "May Day March for Workers and Immigrant Rights",
+    "organization": "Various",
+    "description": "Washington State has the most regressive tax structure in the United States. The city council of Seattle is trying to change that with 'A RESOLUTION expressing The City of Seattle’s intent to adopt a progressive income tax targeting high-income households.'",
+    "tags": ["worker rights", "immigration", "socialism"],
+    "when": {
+      "start": "2017-05-01T11:00:00",
+      "end": "2017-05-01T18:00:00"
+    },
+    "where": {
+      "address": {
+        "street": "Judkins Park",
+        "city": "Seattle",
+        "state": "WA",
+        "zip": ""
+      },
+      "lat": 0,
+      "lng": 0,
+    },
+    "actions": [
+      {
+        "url": "/actions/2/",
+        "name": "March with the ACLU",
+        "description": "The ACLU of Washington has endorsed the Annual May Day March for Workers and Immigrant Rights organized by the May 1st Action Coalition and El Comité and will be joining the march in solidarity with our local immigrant communities.",
+        "link": "https://www.aclu-wa.org/events/annual-may-day-march-workers-and-immigrant-rights-aclu-contingent",
+        "organization": {"name": "Seattle ACLU", "link": "https://www.aclu-wa.org"},
+        "tags": ["direct action"],
+      },
+      {
+        "url": "/actions/3/",
+        "name": "March with the DSA",
+        "description": "",
+        "link": "https://seattledsa.org/event/may-day-march-workers-immigrant-rights-2/",
+        "organization": {"name": "Seattle DSA", "link": "https://seattledsa.org"},
+        "tags": ["direct action"],
+      }
+    ]
+  },
+  {
+    "url": "/events/3/",
+    "name": "Oppose Obamacare (ACA) Repeal",
+    "organization": "Like everyone",
+    "description": "Back and crueler than ever in order to get the 'Freedom Caucus' on board. If you have a preexisting condition you are being politely asked to die in the street basically.",
+    "tags": ["healthcare", "congress"],
+    "when": {
+      "start": "2017-05-01T11:00:00",
+      "end": "Never apparently."
+    },
+    "where": {},
+    "actions": [
+      {
+        "url": "/actions/5/",
+        "name": "Call your representatives",
+        "description": "DEFEAT SON OF ZOMBIE TRUMPCARE!",
+        "link": "https://www.facebook.com/SeattleIndivisible/posts/288855624894494",
+        "organization": {"name": "Seattle Indivisible", "link": "https://www.seattleindivisible.com"},
+        "post_action_link": "https://goo.gl/forms/lbHUvI9h58f0dLqx1",
+        "sample_script": "My name is [name] calling from [city,zip]. I want to let Representative [congressperson’s name] know that I will NOT support him/her in future elections if he/she votes to repeal the ACA. [insert personal story about ACA if able]",
+        "representatives": [
+          {
+            "name": "Pramila Jayapal",
+            "phone": "202-225-3106",
+            "title": "Rep"
+          },
+          {
+            "name": "Patty Murray",
+            "phone": "202-224-2621",
+            "title": "Sen"
+          },
+          {
+            "name": "Maria Cantwell",
+            "phone": "202-224-3441",
+            "title": "Sen"
+          }
+        ],
+        "tags": ["phone call"],
+      },
+      {
+        "url": "/actions/4/",
+        "name": "Call your representatives",
+        "description": "",
+        "link": "",
+        "organization": {"name": "Seattle ACLU", "link": "https://www.aclu-wa.org"},
+        "representatives": [
+          {
+            "name": "Pramila Jayapal",
+            "phone": "202-225-3106",
+            "title": "Rep"
+          },
+          {
+            "name": "Patty Murray",
+            "phone": "202-224-2621",
+            "title": "Sen"
+          },
+          {
+            "name": "Maria Cantwell",
+            "phone": "202-224-3441",
+            "title": "Sen"
+          }
+        ],
+        "tags": ["phone call"],
+      }
+    ]
+  }
+]
