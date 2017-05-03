@@ -16,7 +16,7 @@ const BaseFooter = glamorous.footer((props, theme) => ({
 const Footer = props => {
   return (
     <BaseFooter>
-      <Link to="/about">About</Link>
+      <Link to="/about/">About</Link>
     </BaseFooter>
   );
 };
