@@ -15,6 +15,11 @@ const colors = {
 
 const theme = {
   colors: {
+    appMenu: {
+      color: colors.white,
+      backgroundColor: colors.grey.darkest
+    },
+
     brand: {
       color: colors.pink,
     },

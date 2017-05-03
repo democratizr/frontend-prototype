@@ -4,9 +4,13 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
+import AppMenu from './AppMenu';
 import Footer from './Footer';
 import Header from './Header';
+import reducer from '../reducers';
 import About from '../screens/About';
 import Home from '../screens/Home';
 import { percent, rem } from '../styles/sizes';
@@ -37,22 +41,27 @@ const AppFooter = glamorous(Footer)({
   marginTop: rem(1)
 });
 
+const appStore = createStore(reducer);
+
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <AppOuter>
-        <Router>
-          <AppInner>
-            <AppHeader />
-            <AppBody>
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
-            </AppBody>
-            <AppFooter />
-          </AppInner>
-        </Router>
-      </AppOuter>
-    </ThemeProvider>
+    <Provider store={appStore}>
+      <ThemeProvider theme={theme}>
+        <AppOuter>
+          <Router>
+            <AppInner>
+              <AppHeader />
+              <AppMenu />
+              <AppBody>
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+              </AppBody>
+              <AppFooter />
+            </AppInner>
+          </Router>
+        </AppOuter>
+      </ThemeProvider>
+    </Provider>
   );
 };
 

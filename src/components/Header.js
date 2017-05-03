@@ -1,6 +1,7 @@
 import glamorous from 'glamorous';
 import React, { Component } from 'react';
 
+import AppMenuButton from './AppMenuButton';
 import Button from './Button';
 import Icon from './Icon';
 import Link from './Link';
@@ -179,34 +180,6 @@ class Location extends Component {
   }
 }
 
-const MenuButton = glamorous(Button)({
-  boxSizing: 'border-box',
-  width: rem(1),
-  height: rem(1),
-  margin: '0 0 0 auto',
-  border: 0,
-  padding: 0,
-  background: 'transparent',
-
-  [medium]: {
-    width: rem(1.5),
-    height: rem(1.5)
-  }
-});
-
-const MenuButtonIcon = glamorous(Icon)({
-  width: percent(100),
-  height: percent(100)
-});
-
-const HeaderMenuButton = () => {
-  return (
-    <MenuButton>
-      <MenuButtonIcon iconTheme="light" name="hamburger" />
-    </MenuButton>
-  );
-};
-
 const headerOffsetStyle = {
   boxSizing: 'border-box',
   height: rem(4),
@@ -236,7 +209,7 @@ const Header = props => {
       <HeaderContent>
         <HeaderLogo />
         <Location />
-        <HeaderMenuButton />
+        <AppMenuButton />
       </HeaderContent>
       {/* This just exists to offset the space of the fixed header */}
       <HeaderOffset />
