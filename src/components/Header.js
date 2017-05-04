@@ -1,8 +1,10 @@
 import glamorous from 'glamorous';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import AppMenuButton from './AppMenuButton';
 import Button from './Button';
+import HeaderBackButton from './HeaderBackButton';
 import Icon from './Icon';
 import Link from './Link';
 import TextInput from './TextInput';
@@ -137,8 +139,9 @@ const LocationInput = glamorous(TextInput)(fieldStyle, {
   padding: rem(1/2, 2),
 
   [medium]: {
-    height: rem(2.5)
-  }
+    height: rem(2.5),
+    paddingLeft: rem(2.5),
+  },
 });
 
 const LocationField = glamorous.div({
@@ -182,7 +185,7 @@ class Location extends Component {
 
 const headerOffsetStyle = {
   boxSizing: 'border-box',
-  height: rem(4),
+  height: rem(3),
 
   [medium]: {
     height: rem(4.5)
@@ -203,18 +206,37 @@ const HeaderContent = glamorous.header(headerOffsetStyle, (props, theme) => ({
   zIndex: 1
 }));
 
-const Header = props => {
+const BaseHeader = props => {
+  const {
+    dispatch,
+    router,
+    ...rest
+  } = props;
+
+  const { location } = router;
+  const { pathname } = location;
+  const isHome = pathname === '/';
+
   return (
-    <div {...props}>
-      <HeaderContent>
-        <HeaderLogo />
-        <Location />
-        <AppMenuButton />
-      </HeaderContent>
+    <div {...rest}>
+      {isHome ?
+        <HeaderContent>
+          <HeaderLogo />
+          <Location />
+          <AppMenuButton />
+        </HeaderContent> :
+        <HeaderContent>
+          <HeaderBackButton />
+          <AppMenuButton />
+        </HeaderContent>}
       {/* This just exists to offset the space of the fixed header */}
       <HeaderOffset />
     </div>
   );
 };
+
+const mapStateToProps = ({ router }) => ({ router });
+
+const Header = connect(mapStateToProps)(BaseHeader);
 
 export default Header;

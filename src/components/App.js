@@ -1,23 +1,24 @@
 import glamorous, { ThemeProvider } from 'glamorous';
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { connect, Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 
 import AppMenu, { width as appMenuWidth } from './AppMenu';
+import AppRouter, { middleware as historyMiddleware } from './AppRouter';
 import Footer from './Footer';
 import Header from './Header';
 import reducer from '../reducers';
 import About from '../screens/About';
 import Home from '../screens/Home';
+import NotFound from '../screens/NotFound';
 import Issues from '../screens/Issues';
 import Organizations from '../screens/Organizations';
 import { percent, rem } from '../styles/sizes';
 import theme from '../styles/theme';
 
+
+const store = createStore(reducer, applyMiddleware(historyMiddleware));
 
 const AppOuter = glamorous.div({
   height: percent(100)
@@ -33,19 +34,22 @@ const StyledAppInner = glamorous.div((props, theme) => ({
 
 const BaseAppInner = props => {
   return (
-    <Router history={null}>
+    <AppRouter>
       <StyledAppInner {...props}>
         <AppHeader />
         <AppMenu />
         <AppBody>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about/" component={About} />
-          <Route exact path="/issues/" component={Issues} />
-          <Route exact path="/organizations" component={Organizations} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about/" component={About} />
+            <Route exact path="/issues/" component={Issues} />
+            <Route exact path="/organizations/" component={Organizations} />
+            <Route component={NotFound} />
+          </Switch>
         </AppBody>
         <AppFooter />
       </StyledAppInner>
-    </Router>
+    </AppRouter>
   );
 };
 
@@ -67,11 +71,9 @@ const AppFooter = glamorous(Footer)({
   marginTop: rem(1)
 });
 
-const appStore = createStore(reducer);
-
 const App = () => {
   return (
-    <Provider store={appStore}>
+    <Provider store={store}>
       <ThemeProvider theme={theme}>
         <AppOuter>
           <AppInner />
