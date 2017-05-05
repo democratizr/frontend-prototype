@@ -7,8 +7,6 @@ const Link = glamorous(RouterLink)((props, theme) => ({
   ...theme.typography.bold,
   textDecoration: 'none',
 
-  ':visited': theme.colors.navigation,
-
   ':hover': {
     textDecoration: 'underline'
   }

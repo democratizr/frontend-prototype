@@ -14,7 +14,25 @@ const colors = {
 };
 
 const theme = {
+  common: {
+    resetList: {
+      display: 'block',
+      listStyle: 'none',
+      margin: 0,
+      padding: 0
+    }
+  },
+
   colors: {
+    appMenu: {
+      color: colors.white,
+      backgroundColor: colors.grey.darkest
+    },
+    appMenuLink: {
+      color: colors.white
+    },
+    appMenuShadow: colors.black,
+
     brand: {
       color: colors.pink,
     },
