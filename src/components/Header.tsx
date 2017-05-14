@@ -7,6 +7,7 @@ import { RouterState } from 'react-router-redux';
 import AppMenuButton from './AppMenuButton';
 import HeaderBackButton from './HeaderBackButton';
 import HeaderLocation from './HeaderLocation';
+import HeaderTitle from './HeaderTitle';
 import Link from './Link';
 import { Theme } from '../config';
 import { medium } from '../styles/breakpoints';
@@ -90,6 +91,7 @@ const BaseHeader = props => {
         (
           <HeaderContent>
             <HeaderBackButton />
+            <HeaderTitle />
             <AppMenuButton />
           </HeaderContent>
         )}
