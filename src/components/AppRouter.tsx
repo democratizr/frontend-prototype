@@ -1,5 +1,5 @@
 import createHistory from 'history/createBrowserHistory';
-import React from 'react';
+import * as React from 'react';
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 
 

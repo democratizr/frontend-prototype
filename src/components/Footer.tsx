@@ -1,11 +1,12 @@
 import glamorous from 'glamorous';
-import React from 'react';
+import * as React from 'react';
 
-import { rem } from '../styles/sizes';
 import Link from './Link';
+import { Theme } from '../config';
+import { rem } from '../styles/sizes';
 
 
-const BaseFooter = glamorous.footer((props, theme) => ({
+const BaseFooter = glamorous.footer((props, theme: Theme) => ({
   display: 'flex',
   justifyContent: 'center',
   flexShrink: 0,
@@ -13,7 +14,7 @@ const BaseFooter = glamorous.footer((props, theme) => ({
   ...theme.colors.footer
 }));
 
-const Footer = props => {
+const Footer = () => {
   return (
     <BaseFooter>
       <Link to="/about/">About</Link>
