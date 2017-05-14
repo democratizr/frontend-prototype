@@ -1,11 +1,14 @@
 import glamorous from 'glamorous';
-import React from 'react';
+import { CSSProperties } from 'glamorous/typings/css-properties';
+import * as React from 'react';
 import { connect } from 'react-redux';
+import { RouterState } from 'react-router-redux';
 
 import AppMenuButton from './AppMenuButton';
 import HeaderBackButton from './HeaderBackButton';
 import HeaderLocation from './HeaderLocation';
 import Link from './Link';
+import { Theme } from '../config';
 import { medium } from '../styles/breakpoints';
 import { percent, rem } from '../styles/sizes';
 
@@ -20,7 +23,7 @@ const Logo = glamorous.div({
   }
 });
 
-const HeaderLink = glamorous(Link)((props, theme) => ({
+const HeaderLink = glamorous(Link)((props, theme: Theme) => ({
   ...theme.typography.normal,
   ...theme.colors.headerText,
 
@@ -40,25 +43,25 @@ const HeaderLogo = () => {
   );
 };
 
-const headerOffsetStyle = {
+const headerOffsetStyle: CSSProperties = {
   boxSizing: 'border-box',
+  display: 'flex',
+  alignItems: 'center',
   height: rem(3),
+  padding: rem(1),
 
   [medium]: {
     height: rem(4.5)
   }
 };
 
-const HeaderOffset = glamorous.div(headerOffsetStyle);
+export const HeaderOffset = glamorous.div(headerOffsetStyle);
 
-const HeaderContent = glamorous.header(headerOffsetStyle, (props, theme) => ({
+const HeaderContent = glamorous.header(headerOffsetStyle, (props, theme: Theme) => ({
   position: 'fixed',
-  display: 'flex',
-  alignItems: 'center',
   top: 0,
   left: 0,
   width: percent(100),
-  padding: rem(1),
   ...theme.colors.brandInverted,
   zIndex: 1
 }));
@@ -77,22 +80,30 @@ const BaseHeader = props => {
   return (
     <div {...rest}>
       {isHome ?
-        <HeaderContent>
-          <HeaderLogo />
-          <HeaderLocation />
-          <AppMenuButton />
-        </HeaderContent> :
-        <HeaderContent>
-          <HeaderBackButton />
-          <AppMenuButton />
-        </HeaderContent>}
+        (
+          <HeaderContent>
+            <HeaderLogo />
+            <HeaderLocation />
+            <AppMenuButton />
+          </HeaderContent>
+        ) :
+        (
+          <HeaderContent>
+            <HeaderBackButton />
+            <AppMenuButton />
+          </HeaderContent>
+        )}
       {/* This just exists to offset the space of the fixed header */}
       <HeaderOffset />
     </div>
   );
 };
 
-const mapStateToProps = ({ router }) => ({ router });
+type StateProps = {
+  router: RouterState
+};
+
+const mapStateToProps = ({ router }: StateProps): StateProps => ({ router });
 
 const Header = connect(mapStateToProps)(BaseHeader);
 

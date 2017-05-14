@@ -1,10 +1,11 @@
 import glamorous from 'glamorous';
 
+import { Theme } from '../config';
 import { medium } from '../styles/breakpoints';
 import { rem, px } from '../styles/sizes';
 
 
-const ContentBox = glamorous.div((props, theme) => ({
+const ContentBox = glamorous.div((props, theme: Theme) => ({
   padding: rem(1),
   borderStyle: 'solid',
   borderWidth: px(1, 0),

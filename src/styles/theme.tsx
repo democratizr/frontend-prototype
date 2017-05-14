@@ -13,6 +13,42 @@ const colors = {
   blue: '#3c6c90',
 };
 
+// import { CSSProperties } from 'glamorous/typings/css-properties';
+// type Color = string;
+//
+// interface HTMLColorStyles {
+//   color?: Color,
+//   backgroundColor?: Color,
+// };
+//
+// interface SVGColorStyles {
+//   fill?: Color
+// };
+//
+// interface IconTheme {
+//   [name: string]: SVGColorStyles
+// };
+
+interface FontStyles {
+  fontWeight?: 300 | 400;
+};
+
+interface ThemeTypography {
+  [name: string]: FontStyles;
+};
+
+// export interface Theme {
+//   common: {
+//     [name: string]: CSSProperties
+//   },
+//   colors: {
+//     [name: string]: Color | HTMLColorStyles | IconTheme,
+//   },
+//   typography: {
+//     [name: string]: FontStyles
+//   }
+// };
+
 const theme = {
   common: {
     resetList: {
@@ -31,7 +67,10 @@ const theme = {
     appMenuLink: {
       color: colors.white
     },
-    appMenuShadow: colors.black,
+    appMenuMask: {
+      backgroundColor: colors.black25
+    },
+    appMenuShadow: colors.black25,
 
     brand: {
       color: colors.pink,
@@ -96,7 +135,7 @@ const theme = {
     bold: {
       fontWeight: 400,
     }
-  },
+  } as ThemeTypography,
 };
 
 export default theme;

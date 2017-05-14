@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 
 import Button from './Button';
@@ -9,7 +9,7 @@ import { medium } from '../styles/breakpoints';
 import { percent, rem } from '../styles/sizes';
 
 
-const MenuButton = glamorous(Button)({
+export const MenuButton = glamorous(Button)({
   boxSizing: 'border-box',
   width: rem(1),
   height: rem(1),
@@ -24,12 +24,16 @@ const MenuButton = glamorous(Button)({
   }
 });
 
-const MenuButtonIcon = glamorous(Icon)({
+export const MenuButtonIcon = glamorous(Icon)({
   width: percent(100),
   height: percent(100)
 });
 
-const BaseAppMenuButton = ({ toggleMenu }) => {
+type DispatchProps = {
+  toggleMenu: () => void
+};
+
+const BaseAppMenuButton = ({ toggleMenu }: DispatchProps) => {
   return (
     <MenuButton onClick={toggleMenu}>
       <MenuButtonIcon iconTheme="light" name="hamburger" />
@@ -37,7 +41,7 @@ const BaseAppMenuButton = ({ toggleMenu }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch): DispatchProps => {
   return {
     toggleMenu: () => {
       dispatch({ type: actions.TOGGLE_MENU });
