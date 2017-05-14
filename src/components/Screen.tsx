@@ -1,5 +1,6 @@
 import glamorous from 'glamorous';
 
+import { Theme } from '../config';
 import { medium } from '../styles/breakpoints';
 import { em } from '../styles/sizes';
 
@@ -14,7 +15,7 @@ const Screen = glamorous.main({
 
 export default Screen;
 
-export const ContentScreen = glamorous(Screen)((props, theme) => ({
+export const ContentScreen = glamorous(Screen)((props, theme: Theme) => ({
   flex: 1,
   ...theme.colors.contentScreen,
 

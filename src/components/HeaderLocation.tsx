@@ -1,16 +1,18 @@
 import glamorous from 'glamorous';
-import React from 'react';
+import { CSSProperties } from 'glamorous/typings/css-properties';
+import * as React from 'react';
 import { connect } from 'react-redux';
 
 import Button from './Button';
 import Icon from './Icon';
 import TextInput from './TextInput';
-import { actions } from '../reducers/location';
+import { Theme } from '../config';
+import { actions, State } from '../reducers/location';
 import { medium } from '../styles/breakpoints';
 import { percent, px, rem } from '../styles/sizes';
 
 
-const fieldStyle = (props, theme) => ({
+const fieldStyle = (props, theme: Theme): CSSProperties => ({
   padding: rem(1/2),
   border: 0,
   borderRadius: px(4),
@@ -24,7 +26,7 @@ const locationIconStyle = {
   marginRight: rem(1/4)
 };
 
-const MyLocation = glamorous.div(fieldStyle, (props, theme) => ({
+const MyLocation = glamorous.div(fieldStyle, (props, theme: Theme) => ({
   display: 'flex',
   alignItems: 'center',
   ...theme.typography.bold,
@@ -46,7 +48,7 @@ const HeaderMyLocation = props => {
   return (
     <MyLocation {...rest}>
       <MyLocationIcon iconTheme="dark" name="location" />
-      My Location
+        My Location
       <MyLocationClearButton onClick={onClear}>⨉</MyLocationClearButton>
     </MyLocation>
   );
@@ -79,7 +81,7 @@ const HeaderLocationSubmitButton = () => {
     <LocationSubmitButton>
       <Icon iconTheme="brand" name="circleChevronKnockout" />
     </LocationSubmitButton>
-  )
+  );
 };
 
 const LocationFieldIcon = glamorous(Icon)(locationIconStyle, {
@@ -98,7 +100,7 @@ const LocationFieldIcon = glamorous(Icon)(locationIconStyle, {
 const HeaderLocationFieldIcon = () => {
   return (
     <LocationFieldIcon name="location" />
-  )
+  );
 };
 
 const LocationInput = glamorous(TextInput)(fieldStyle, {
@@ -142,8 +144,17 @@ const BaseHeaderLocation = ({ cancelDetection, location }) => {
   );
 };
 
-const mapStateToProps = ({ location }) => ({ location });
-const mapDispatchToProps = dispatch => {
+type StateProps = {
+  location: State
+};
+
+const mapStateToProps = ({ location }: StateProps): StateProps => ({ location });
+
+type DispatchProps = {
+  cancelDetection: () => void
+};
+
+const mapDispatchToProps = (dispatch): DispatchProps => {
   return {
     cancelDetection: () => {
       dispatch({ type: actions.CANCEL_DETECTION });

@@ -3,9 +3,17 @@ export const actions = {
   TOGGLE_MENU: 'TOGGLE_MENU'
 };
 
-const defaultState = { isOpen: false };
+export type State = {
+  isOpen: boolean
+};
 
-export const reducer = (state = defaultState, action) => {
+export type Action = {
+  type: keyof typeof actions
+};
+
+const defaultState: State = { isOpen: false };
+
+export const reducer = (state: State = defaultState, action: Action): State => {
   switch (action.type) {
     case actions.CLOSE_MENU:
       return { isOpen: false };

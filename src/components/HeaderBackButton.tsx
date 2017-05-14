@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import { goBack } from 'react-router-redux';
 
@@ -30,12 +30,16 @@ const BaseBackButton = ({ goBack }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => {
+type DispatchProps = {
+  goBack: () => void
+};
+
+const mapDispatchToProps = (dispatch): DispatchProps => {
   return {
     goBack: () => {
       dispatch(goBack());
     }
-  }
+  };
 };
 
 const HeaderBackButton = connect(null, mapDispatchToProps)(BaseBackButton);
